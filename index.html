@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Prestise Provinsi Bali | Pantau Permohonan</title>
+    <meta name="csrf-token" content="12R5QlHZwUvq0rzqqqjw9RBNNOzaBrxGWrw1PnlF">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    
+    <!-- Web Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Line Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --bg-gray: #f5f5f5; /* Light gray background */
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--bg-gray); /* Light gray background */
+            overflow-x: hidden;
+        }
+        
+        /* Main content area with gray background */
+        .main-content {
+            background-color: var(--bg-gray);
+            padding: 2rem 0;
+        }
+        
+        /* Navbar Styles */
+        .navbar-area {
+            background-color: var(--white) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .navbar {
+            background-color: var(--white) !important;
+            padding: 1rem 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--gray-700) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            position: relative;
+            font-size: 13px !important;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Bottom underline for regular nav links */
+        .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:not(.dropdown-toggle):hover::after,
+        .navbar-nav .nav-link:not(.dropdown-toggle).active::after {
+            width: 80%;
+            left: 10%;
+        }
+        
+        /* Dropdown Arrow Styles */
+        .navbar-nav .nav-link.dropdown-toggle {
+            padding-right: 1.8rem !important;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link.dropdown-toggle::after {
+            content: '';
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid var(--gray-600);
+            transition: all 0.3s ease;
+            margin-left: 0.5rem;
+        }
+        
+        .navbar-nav .nav-link.dropdown-toggle:hover::after {
+            border-top-color: var(--primary-color);
+        }
+        
+        .navbar-nav .nav-link.dropdown-toggle.show::after {
+            transform: translateY(-50%) rotate(180deg);
+            border-top-color: var(--primary-color);
+        }
+        
+        .dropdown-menu {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            animation: dropdownSlide 0.3s ease;
+        }
+        
+        @keyframes dropdownSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dropdown-item {
+            color: var(--gray-700) !important;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            font-size: 13px !important;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(248, 249, 250, 0.7) !important;
+            color: var(--primary-color) !important;
+        }
+        
+        .btn-login {
+            background-color: var(--danger-color) !important;
+            color: var(--white) !important;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px !important;
+        }
+        
+        .btn-login:hover {
+            background-color: var(--white) !important;
+            color: var(--danger-color) !important;
+            border: 1px solid var(--danger-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+        }
+        
+        /* Hamburger Menu Styles */
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            outline: none;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        
+        .navbar-toggler-icon {
+            display: none;
+        }
+        
+        /* Custom Hamburger Lines */
+        .navbar-toggler span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: var(--gray-700);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar-toggler span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .navbar-toggler span:nth-child(2) {
+            top: 6px;
+        }
+        
+        .navbar-toggler span:nth-child(3) {
+            top: 12px;
+        }
+        
+        .navbar-toggler.active span:nth-child(1) {
+            top: 6px;
+            transform: rotate(135deg);
+        }
+        
+        .navbar-toggler.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .navbar-toggler.active span:nth-child(3) {
+            top: 6px;
+            transform: rotate(-135deg);
+        }
+        
+        .navbar-toggler.active span {
+            background: var(--primary-color);
+        }
+        
+        .navbar-area .button {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-area .button.hide-login {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(20px);
+        }
+        
+        /* Section Styles */
+        .services {
+            padding: 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title span {
+            color: var(--white);
+            font-weight: 100;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 4px 12px;
+            border: - solid var(--danger-color);
+            border-radius: 0;
+            background-color: var(--danger-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title .title-divider {
+            margin: 1rem auto 2rem;
+            width: 80px;
+            height: 2px;
+            background-color: var(--danger-color);
+        }
+        
+        .section-title p {
+            font-size: 13px;
+            color: var(--gray-600);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Form Styles */
+        .section-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 13px !important;
+        }
+        
+        .form-control {
+            border: 2px solid #000000; /* Black border 100% */
+            border-radius: 0; /* Square shape */
+            padding: 12px 16px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+            outline: none;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--danger-color) !important;
+            color: var(--white) !important;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 0;
+            font-weight: normal;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #c82333 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+        }
+        
+        /* Search Results - No White Background */
+        .search-results {
+            background: transparent; /* Removed white background */
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: none; /* Removed shadow */
+            margin-top: 2rem;
+            animation: slideInUp 0.6s ease;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-results h2 {
+            text-align: center;
+            color: var(--success-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        /* Table Styles - No White Background */
+        .table {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: none;
+            margin-bottom: 2rem;
+            background: transparent;
+            font-size: 13px !important;
+        }
+        
+        .table thead th {
+            background: var(--gray-50);
+            color: var(--gray-700);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px !important;
+            letter-spacing: 0.5px;
+            border: none;
+            padding: 16px;
+            border-bottom: 3px solid #000000; /* Thick black border */
+        }
+        
+        .table tbody tr {
+            transition: all 0.3s ease;
+        }
+        
+        .table tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white on hover */
+        }
+        
+        .table tbody td {
+            padding: 16px;
+            vertical-align: middle;
+            border-color: var(--gray-200);
+            background: transparent; /* Removed white background */
+            font-size: 13px !important;
+        }
+        
+        /* Detail Table with Darker Lines */
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        
+        .detail-table tr {
+            border-bottom: 1px solid #a0a0a0; /* Darker horizontal lines */
+        }
+        
+        .detail-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-table td {
+            padding: 12px 0;
+            font-size: 13px;
+            vertical-align: top;
+        }
+        
+        .detail-table td:first-child {
+            width: 200px;
+            font-weight: 600;
+        }
+        
+        .detail-table td:nth-child(2) {
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Download Button - Desktop */
+        .btn-download {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px !important;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .btn-download:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+        
+        /* Mobile download button - square with icon and text */
+        @media (max-width: 768px) {
+            .btn-download {
+                background-color: var(--primary-color) !important;
+                color: var(--white) !important;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 0; /* Square shape */
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px !important;
+                white-space: nowrap; /* Prevent text wrapping */
+                width: auto; /* Auto width to fit content */
+            }
+            
+            .btn-download span {
+                display: inline; /* Show text on mobile */
+            }
+        }
+        
+        /* Footer - White Background */
+        .footer {
+            background: var(--white);
+            color: var(--gray-700);
+            margin-top: 0;
+            padding: 3rem 0 1rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .footer .row {
+            align-items: flex-start;
+        }
+        
+        /* Left Section */
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .footer-left .logo {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-left .logo img {
+            max-height: 50px;
+            width: auto;
+        }
+        
+        .footer-left p {
+            font-size: 13px !important;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        
+        /* ===============================================================
+           FOOTER CONTACT SECTION - KONTAK DI FOOTER
+           =============================================================== */
+
+        /* Container utama untuk daftar kontak */
+        .footer-contact {
+            list-style: none;         /* Menghilangkan bullet points pada list */
+            padding: 0;               /* Menghilangkan padding default */
+            margin: 0;                /* Menghilangkan margin default */
+            display: flex;            /* Menggunakan flexbox layout */
+            flex-direction: column;   /* Menyusun item secara vertikal (atas ke bawah) */
+            gap: 0.75rem;            /* Jarak antar item 0.75rem (12px) */
+        }
+
+        /* Styling untuk setiap item list (alamat, telepon, email) */
+        .footer-contact li {
+            display: flex;            /* Menggunakan flexbox untuk menyusun ikon dan teks */
+            align-items: center;      /* Menyelaraskan ikon dan teks secara vertikal tengah */
+            font-size: 12px !important; /* Ukuran font 12px untuk desktop */
+        }
+
+        /* Styling untuk ikon (map-marker, phone, envelope) */
+        .footer-contact .icon {
+            margin-right: 10px;      /* Jarak antara ikon dan teks 10px */
+            width: 20px;             /* Lebar ikon 20px */
+            height: 20px;            /* Tinggi ikon 20px */
+            color: var(--danger-color); /* Warna ikon merah (sesuai variabel) */
+            font-size: 16px;         /* Ukuran font ikon 16px */
+            display: flex;           /* Menggunakan flexbox untuk center ikon */
+            justify-content: center; /* Menyelaraskan ikon horizontal tengah */
+            align-items: center;    /* Menyelaraskan ikon vertikal tengah */
+            /* Tidak ada border atau background - ikon polos */
+        }
+        
+        /* Center Section */
+        .footer-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer-center h3 {
+            color: var(--gray-700);
+            font-weight: 700; /* Made bold */
+            font-size: 16px !important;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Changed to left align */
+            gap: 0.75rem;
+        }
+        
+        .footer-menu li {
+            margin: 0;
+        }
+        
+        .footer-menu a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 13px !important;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-menu a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        /* PSE Image Styling */
+        .pse-image {
+            margin-top: 1rem;
+            max-height: 80px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        /* Right Section */
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+        
+        .footer-right img {
+            max-height: 80px;
+            width: auto;
+        }
+        
+        /* Footer bottom - Updated for left/right alignment */
+        .footer-bottom {
+            border-top: 1px solid var(--gray-200);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            position: relative; /* Added for absolute positioning */
+        }
+        
+        .footer-bottom .left-text {
+            position: relative;
+            right: 45px;
+            text-align: left;
+            font-size: 13px !important;
+            padding-left: 15px; /* Added padding to match container */
+        }
+        
+        .footer-bottom .right-text {
+            position: relative;
+            top: 20px;
+            text-align: right;
+            font-size: 13px !important;
+            position: absolute; /* MODIFIED: Changed to absolute positioning */
+            bottom: 1rem; /* Align to bottom */
+            right: 15px; /* Align to right edge with container padding */
+        }
+        
+        /* Scroll to Top - Always visible and square */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--danger-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+            opacity: 1; /* Always visible */
+            visibility: visible; /* Always visible */
+        }
+        
+        /* Make scroll-top square on mobile */
+        @media (max-width: 768px) {
+            .scroll-top {
+                width: 45px;
+                height: 45px;
+                border-radius: 0; /* Square shape */
+                bottom: 20px;
+                left: 20px;
+                font-size: 18px;
+            }
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--gray-600);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            color: var(--white);
+        }
+        
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-size: 13px !important;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(10px);
+        }
+        
+        .notification.success {
+            background-color: var(--success-color);
+        }
+        
+        .notification.info {
+            background-color: var(--info-color);
+        }
+        
+        .notification.error {
+            background-color: var(--danger-color);
+        }
+        
+        /* ===============================================================
+           RESPONSIVE STYLES
+           =============================================================== */
+        
+        /* Responsive - Desktop */
+        @media (min-width: 993px) {
+            /* Hide PSE image in center section on desktop */
+            .footer-center .pse-image {
+                display: none;
+            }
+            
+            /* Show PSE image in right section on desktop */
+            .footer-right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-start;
+            }
+            
+            .footer-right img {
+                display: block;
+                max-height: 80px;
+                width: auto;
+            }
+        }
+        
+        /* Responsive - Tablet and Mobile */
+        @media (max-width: 992px) {
+            .navbar-area .button {
+                transition: all 0.3s ease;
+            }
+            
+            /* Footer responsive - Desktop to tablet */
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                align-items: center;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            
+            .footer-right {
+                align-items: center;
+            }
+            
+            .footer-contact {
+                justify-content: center;
+            }
+            
+            /* Show PSE image in center section on tablet */
+            .footer-center .pse-image {
+                display: block;
+            }
+            
+            /* Hide right section on tablet */
+            .footer-right {
+                display: none;
+            }
+            
+            /* Footer bottom responsive for tablet */
+            .footer-bottom .right-text {
+                position: static; /* Reset positioning for mobile */
+                text-align: center;
+                display: block;
+                padding-right: 0;
+                padding-left: 0;
+            }
+            
+            .footer-bottom .left-text {
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Hide login button on mobile */
+            .navbar-area .button {
+                display: none !important;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+                font-weight: 900;
+                text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+                letter-spacing: -0.5px;
+            }
+            
+            .table {
+                font-size: 13px !important;
+            }
+            
+            .btn-primary-custom {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .search-results {
+                padding: 1.5rem;
+            }
+            
+            .navbar-nav {
+                background-color: var(--white);
+                padding: 1rem;
+                border-radius: 8px;
+                margin-top: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            /* Mobile hamburger adjustments */
+            .navbar-toggler {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .navbar-toggler span {
+                height: 2px;
+            }
+            
+            .navbar-toggler span:nth-child(1) {
+                top: 0px;
+            }
+            
+            .navbar-toggler span:nth-child(2) {
+                top: 6px;
+            }
+            
+            .navbar-toggler span:nth-child(3) {
+                top: 12px;
+            }
+            
+            .navbar-toggler.active span:nth-child(1) {
+                top: 6px;
+            }
+            
+            .navbar-toggler.active span:nth-child(3) {
+                top: 6px;
+            }
+            
+            /* Footer mobile layout */
+            .footer {
+                padding: 2rem 0 0.5rem;
+            }
+            
+            .footer .row {
+                flex-direction: column;
+            }
+            
+            .footer-left {
+                order: 1;
+                align-items: flex-start;
+                text-align: left;
+                margin-bottom: 2rem;
+            }
+            
+            .footer-left .logo img {
+                max-height: 30px;
+            }
+            
+            .footer-center {
+                order: 2;
+                align-items: flex-start;
+                text-align: left;
+                margin-bottom: 2rem;
+                position: relative;
+                padding-right: 60px;
+            }
+            
+            .footer-center h3 {
+                margin-bottom: 1rem;
+            }
+            
+            .footer-menu {
+                align-items: flex-start;
+            }
+            
+            /* PSE Image on Mobile */
+            .pse-image {
+                position: absolute;
+                top: 0;
+                right: 0;
+                max-height: 25px !important;
+                width: auto;
+            }
+            
+            .footer-right {
+                order: 3;
+                display: none;
+            }
+            
+            /* Contact info layout on mobile */
+            .footer-contact {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .footer-contact li {
+                display: flex;
+                align-items: center;
+                font-size: 12px !important; /* Tetap 12px di mobile */
+            }
+            
+            /* Icons without border on mobile */
+            .footer-contact .icon {
+                border: none; /* Remove border on mobile */
+            }
+            
+            /* Footer bottom responsive for mobile */
+            .footer-bottom .right-text {
+                position: static; /* Reset positioning for mobile */
+                text-align: center;
+                display: block;
+                padding-right: 0;
+                padding-left: 0;
+            }
+            
+            .footer-bottom .left-text {
+                position: relative;
+                left: 45px;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+        
+        /* Extra small devices (300px and up) */
+        @media (max-width: 380px) {
+            body {
+                min-width: 300px;
+            }
+            
+            .container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            .navbar {
+                padding: 0.5rem 0;
+            }
+            
+            .navbar-brand img {
+                height: 35px;
+            }
+            
+            .section-title {
+                margin-bottom: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 35px;
+                font-weight: 700;
+                text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+                letter-spacing: -0.5px;
+            }
+            
+            .section-title p {
+                font-size: 13px !important;
+            }
+            
+            .form-control {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+            
+            .btn-primary-custom {
+                padding: 8px 16px;
+                font-size: 14px;
+                width: 100%;
+            }
+            
+            .search-results {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .table-responsive {
+                font-size: 13px !important;
+            }
+            
+            .table thead th {
+                padding: 8px 4px;
+                font-size: 13px !important;
+            }
+            
+            .table tbody td {
+                padding: 8px 4px;
+                font-size: 13px !important;
+            }
+            
+            .btn-download {
+                padding: 4px 8px;
+                font-size: 13px !important;
+            }
+            
+            .footer h3 {
+                font-size: 13px !important;
+                margin-bottom: 0.5rem;
+            }
+            
+            .footer p {
+                font-size: 13px !important;
+            }
+            
+            .footer ul li {
+                margin-bottom: 0.1rem;
+            }
+            
+            .footer a {
+                font-size: 13px !important;
+            }
+            
+            .footer-contact li {
+                font-size: 12px !important;
+            }
+            
+            .footer-bottom p {
+                font-size: 13px !important;
+            }
+            
+            .scroll-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                left: 20px;
+                font-size: 16px;
+            }
+            
+            .pse-image {
+                max-height: 40px !important;
+            }
+            
+            .footer-center {
+                padding-right: 50px;
+            }
+        }
+        
+        /* For screens exactly 300px wide */
+        @media (max-width: 300px) {
+            html {
+                font-size: 12px;
+            }
+            
+            .container {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.3rem;
+                font-weight: 900;
+                text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+                letter-spacing: -0.5px;
+            }
+            
+            .table thead th {
+                padding: 6px 2px;
+                font-size: 13px !important;
+            }
+            
+            .table tbody td {
+                padding: 6px 2px;
+                font-size: 13px !important;
+            }
+            
+            .pse-image {
+                max-height: 18px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar-area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="https://prestise.baliprov.go.id/">
+                    <img src="bali1.png" alt="Provinsi Bali">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://prestise.baliprov.go.id/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://prestise.baliprov.go.id/daftar-izin">Daftar Izin</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pantau
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/pantau">Pantau Permohonan</a></li>
+                                <li><a class="dropdown-item" href="/pantau-kendaraan">Pantau Kartu Pengawas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Panduan
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dJFBRuFz7dU" target="_blank">Video Prestise</a></li>
+                                <li><a class="dropdown-item" href="https://drive.google.com/file/d/18mC-nic6WI9Ckokg1zEoF1s5zIT7PgcX/view?usp=drivesdk" target="_blank">Buku Panduan</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="button">
+                    <a href="/login" class="btn-login">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content with Gray Background -->
+    <div class="main-content">
+        <main>
+            <section class="services">
+                <div class="section-body">
+                    <div class="section-title">
+                        <span>E-Perizinan</span>
+                        <h2>Pantau Kartu Pengawas</h2>
+                        <div class="title-divider"></div>
+                        <p>
+                            Silahkan masukan <strong>Kode Registrasi Kendaraan / Nomor Mesin / Nomor Rangka</strong> pada kolom dibawah untuk mendapatkan informasi
+                            terkait dengan data kartu pengawas yang telah terbit.
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pencarian">Kode Registrasi Kendaraan / Nomor Mesin / Nomor Rangka :</label>
+                        <input type="text" class="form-control" id="pencarian" value="17592253521">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-primary-custom" id="cari">
+                            🔍 Pantau Kartu Pengawas
+                        </button>
+                    </div>
+                    
+                    <div class="search-results">
+                        <h2>Data Ditemukan</h2>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Izin</th>
+                                        <th>Tanggal Terbit</th>
+                                        <th>Tanggal Kadaluarsa</th>
+                                        <th>#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Kartu Pengawas ASK Baru</td>
+                                        <td>08 October 2025</td>
+                                        <td>08 October 2026</td>
+                                        <td>
+                                            <button class="btn-download" onclick="handleDownload('KartuPengawasAsk_1759225352_827.pdf')">
+                                                <i class="lni lni-download"></i>
+                                                <span>Detail</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Kartu KP ASK</td>
+                                        <td>08 October 2025</td>
+                                        <td>08 October 2026</td>
+                                        <td>
+                                            <button class="btn-download" onclick="handleDownload('KartuKpAsk_1759225352_827.pdf')">
+                                                <i class="lni lni-download"></i>
+                                                <span>Detail</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Kartu KP ASK Peremajaan</td>
+                                        <td>08 October 2025</td>
+                                        <td>08 October 2026</td>
+                                        <td>
+                                            <button class="btn-download" onclick="handleDownload('KartuKpAsk_1759225352_827.pdf')">
+                                                <i class="lni lni-download"></i>
+                                                <span>Detail</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>QR Code Kendaraan</td>
+                                        <td>08 October 2025</td>
+                                        <td>08 October 2026</td>
+                                        <td>
+                                            <button class="btn-download" onclick="handleDownload('QrAsk_1759225352_827.pdf')">
+                                                <i class="lni lni-download"></i>
+                                                <span>Detail</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                        
+                        <!-- Detail Table with Darker Lines -->
+                        <table class="detail-table">
+                            <tbody>
+                                <tr><td>Kode Registrasi</td><td>:</td><td>17592253521</td></tr>
+                                <tr><td>Tahun Kendaraan</td><td>:</td><td>2022</td></tr>
+                                <tr><td>Warna</td><td>:</td><td>PUTIH</td></tr>
+                                <tr><td>Kapasitas Mesin (cc)</td><td>:</td><td>1197</td></tr>
+                                <tr><td>Tipe Sifat</td><td>:</td><td>PERORANGAN</td></tr>
+                                <tr><td>Tipe Kendaraan</td><td>:</td><td>AYLA 1.2 X AT</td></tr>
+                                <tr><td>Model</td><td>:</td><td></td></tr>
+                                <tr><td>Jenis</td><td>:</td><td>DAIHATSU</td></tr>
+                                <tr><td>Merk</td><td>:</td><td>AYLA</td></tr>
+                                <tr><td>No Kendaraan</td><td>:</td><td>DK1219WM</td></tr>
+                                <tr><td>No Rangka</td><td>:</td><td>MHKS4GBJNJI004019</td></tr>
+                                <tr><td>No Mesin</td><td>:</td><td>3NRH691541</td></tr>
+                                <tr><td>No BPKB</td><td>:</td><td>Q099489130</td></tr>
+                                <tr><td>No Uji</td><td>:</td><td>0</td></tr>
+                                <tr><td>No Lambung</td><td>:</td><td>09</td></tr>
+                                <tr><td>Fasilitas</td><td>:</td><td></td></tr>
+                                <tr><td>Daya Angkut Orang (orang)</td><td>:</td><td>4</td></tr>
+                                <tr><td>Daya Angkut Barang (kg)</td><td>:</td><td>0</td></tr>
+                                <tr><td>Nama Pemilik</td><td>:</td><td>STEFANUS KADEK EDY SUSANTO</td></tr>
+                                <tr><td>Alamat Pemilik</td><td>:</td><td>BANJAR TEGALBADENG DESA TEGALBADENG TIMUR NEGARA JENBERANA</td></tr>
+                                <tr><td>Kesimpulan Verifikasi</td><td>:</td><td class="text-capitalize">lolos</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer - White Background -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Left Section -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-left">
+                        <div class="logo">
+                            <img src="bali1.png" alt="Provinsi Bali">
+                        </div>
+                        <p>
+                            Prestise merupakan sistem yang dikembangkan oleh DPMPTSP Provinsi Bali yang bertujuan untuk memudahkan masyarakat dalam hal pelayanan perizinan.
+                        </p>
+                        <ul class="footer-contact">
+                            <!-- Address -->
+                            <li>
+                                <span class="icon"><i class="lni lni-map-marker"></i></span> 
+                                Jl. Raya Puputan, Renon, Denpasar
+                            </li>
+                            <!-- Phone -->
+                            <li>
+                                <span class="icon"><i class="lni lni-phone"></i></span> 
+                                0361 - 243804
+                            </li>
+                            <!-- Email -->
+                            <li>
+                                <span class="icon"><i class="lni lni-envelope"></i></span> 
+                                dpmptsp@baliprov.go.id
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Center Section with PSE image for mobile -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-center">
+                        <h3>Prestise</h3>
+                        <ul class="footer-menu">
+                            <li><a href="https://prestise.baliprov.go.id/">Home</a></li>
+                            <li><a href="https://prestise.baliprov.go.id/daftar-izin">Daftar Izin</a></li>
+                            <li><a href="/pantau">Pantau Permohonan</a></li>
+                        </ul>
+                        <!-- PSE image for mobile/tablet -->
+                        <img src="terdaftar.png" alt="PSE" class="pse-image">
+                    </div>
+                </div>
+                
+                <!-- Right Section with PSE image for desktop -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-right">
+                        <!-- PSE image for desktop -->
+                        <img src="terdaftar.png" alt="PSE">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="left-text">Developed with Love Tim SPBE Provinsi Bali</span>
+                        <span class="right-text">Copyright © 2025 DPMPTSP Provinsi Bali</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top - Always visible -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        <i class="lni lni-arrow-up"></i>
+    </a>
+
+    <!-- Hidden Form -->
+    <form method="POST" action="" id="form" style="display: none;">
+        <input type="hidden" name="_token" value="12R5QlHZwUvq0rzqqqjw9RBNNOzaBrxGWrw1PnlF">
+    </form>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing...');
+            
+            // Get elements safely
+            const searchBtn = document.getElementById('cari');
+            const searchInput = document.getElementById('pencarian');
+            const scrollTopBtn = document.getElementById('scrollTop');
+            const form = document.getElementById('form');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const loginButton = document.querySelector('.navbar-area .button');
+            
+            // Notification function
+            function showNotification(message, type = 'info') {
+                // Remove existing notifications
+                const existingNotifications = document.querySelectorAll('.notification');
+                existingNotifications.forEach(notif => notif.remove());
+                
+                // Create new notification
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                
+                // Add to page
+                document.body.appendChild(notification);
+                
+                // Show notification
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 100);
+                
+                // Hide and remove after 3 seconds
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+            
+            // Hamburger menu toggle with login button hide/show
+            if (navbarToggler) {
+                navbarToggler.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    // Toggle login button visibility on mobile
+                    if (window.innerWidth <= 992 && loginButton) {
+                        if (this.classList.contains('active')) {
+                            loginButton.classList.add('hide-login');
+                        } else {
+                            loginButton.classList.remove('hide-login');
+                        }
+                    }
+                });
+            }
+            
+            // Search functionality
+            if (searchBtn) {
+                searchBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const searchValue = searchInput ? searchInput.value : '';
+                    console.log('Searching for:', searchValue);
+                    showNotification('Pencarian berhasil untuk: ' + searchValue, 'success');
+                });
+            }
+            
+            // Download function
+            window.handleDownload = function(filename) {
+                console.log('Downloading:', filename);
+                showNotification('Mengunduh ' + filename, 'info');
+                
+                // Create form submission if form exists
+                if (form) {
+                    form.action = '/pantau/download/' + filename;
+                    form.submit();
+                }
+            };
+            
+            // Scroll to top functionality - Always visible
+            if (scrollTopBtn) {
+                // Always show scroll to top button
+                scrollTopBtn.classList.add('show');
+                
+                // Scroll to top when clicked
+                scrollTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Safe anchor link handling
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = anchor.getAttribute('href');
+                    if (href && href !== '#') {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Handle dropdown arrow rotation
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(function(toggle) {
+                // Add Bootstrap event listeners
+                toggle.addEventListener('show.bs.dropdown', function () {
+                    toggle.classList.add('show');
+                });
+                
+                toggle.addEventListener('hide.bs.dropdown', function () {
+                    toggle.classList.remove('show');
+                });
+            });
+            
+            console.log('Initialization complete');
+        });
+        
+        // Fallback for window load
+        window.addEventListener('load', function() {
+            console.log('Window loaded');
+        });
+    </script>
+</body>
+</html>
